@@ -1,16 +1,13 @@
 ---
 date: '1'
-title: 'Halcyon Theme'
-cover: './halcyon.png'
-github: 'https://github.com/bchiang7/halcyon-site'
-external: 'https://halcyon-theme.netlify.com/'
+title: 'Bugcrowd'
+cover: './bc.png'
+github: ''
+external: 'https://bugcrowd.com/CyPH3R'
 tech:
-  - VS Code
-  - Sublime Text
-  - Atom
-  - iTerm2
-  - Hyper
+  - 10+ HOF
+  - 897 Rank
 showInProjects: true
 ---
 
-A minimal, dark blue theme for VS Code, Sublime Text, Atom, iTerm, and more. Available on [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=brittanychiang.halcyon-vscode), [Package Control](https://packagecontrol.io/packages/Halcyon%20Theme), [Atom Package Manager](https://atom.io/themes/halcyon-syntax), and [npm](https://www.npmjs.com/package/hyper-halcyon-theme).
+Bugcrowd is a crowdsourced security platform. I found multiple vulnerabilities in public and private programs.
