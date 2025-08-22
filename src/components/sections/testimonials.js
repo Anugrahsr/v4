@@ -265,56 +265,54 @@ const NetworkSVG = () => (
   </svg>
 );
 
-const RatingBar = ({ rating }) => {
-  return (
-    <div className="rating-bar">
-      <div className="rating-fill" style={{ width: `${(rating / 5) * 100}%` }}></div>
-    </div>
-  );
-};
+const RatingBar = ({ rating }) => (
+  <div className="rating-bar">
+    <div className="rating-fill" style={{ width: `${(rating / 5) * 100}%` }}></div>
+  </div>
+);
 
 const Testimonials = () => {
   const testimonials = [
     {
       name: 'Mohammed Irshadh',
       text: 'Anugrah is experienced and skillful to make us understand our standpoint and providing a clear roadmap...',
-      stars: 5
+      stars: 5,
     },
     {
       name: 'Harshavardhan Reddy Sivadi',
       text: 'Anuragh has answered all my questions. He has given more information than asked and very helpful. He has in-depth knowledge in cybersecurity and is up to date',
-      stars: 5
+      stars: 5,
     },
     {
       name: 'Sumit Siddharth (CEO The SecOps Group)',
       text: 'Anugrah joined SecOps in the early days of the business and we soon identified him as someone who can be groomed to take on multiple roles and juggle many hats. I was pleasantly surprised to see him work up the ladder and take on various responsibilities- including his role in shaping our LLM exam. I am sure he will achieve bigger things in life and I hope we get a chance to work again in future. Thank You Anugrah for your time at SecOps.🙏🏾🚀',
-      stars: 5
+      stars: 5,
     },
     {
       name: 'Yashodhar Poojari',
       text: 'I recently had the pleasure of participating in a 1:1 mentorship session, and it was an incredibly positive experience. Anugrah was exceptionally friendly and approachable, making it easy to discuss my questions and concerns. Every question I had was addressed clearly and thoroughly, providing me with the insights and guidance I needed. The session was not only informative but also very supportive, leaving me feeling more confident and well-prepared. I highly recommend this mentorship to anyone seeking knowledgeable and personable guidance.',
-      stars: 5
+      stars: 5,
     },
     {
       name: 'selvapriya p',
       text: 'Informative and very useful! Got insights that would surely help me upgrade my career. Thanks Anugrah.',
-      stars: 5
+      stars: 5,
     },
     {
       name: 'pramod kumar pradhan',
       text: 'It was really amazing to know some insights from the industry expert about the industry. And got some clarity that what I should focus on.',
-      stars: 5
+      stars: 5,
     },
     {
       name: 'George Kuoribo',
       text: 'The session was very helpful, all questions were answered and the atmosphere was nice. Anugrah might not know it yet but he would make a good mentor.',
-      stars: 5
+      stars: 5,
     },
     {
       name: 'Arjun',
       text: 'It was great talking with Anugrah sir, cleared all my doubts and guided with a clear roadmap. Thank you, looking forward for more interactions in the future.',
-      stars: 5
-    }
+      stars: 5,
+    },
   ];
 
   return (
@@ -325,7 +323,7 @@ const Testimonials = () => {
         <div className="marquee-container">
           <div className="marquee-content">
             {/* Duplicate testimonials for seamless looping */}
-            {[0, 1].map((groupIndex) => (
+            {[0, 1].map(groupIndex => (
               <div className="testimonial-group" key={`group-${groupIndex}`}>
                 {testimonials.map((testimonial, index) => (
                   <div className="testimonial-card" key={`${groupIndex}-${index}`}>

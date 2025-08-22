@@ -59,7 +59,7 @@ const SearchIcon = () => (
   </svg>
 );
 
-const SearchBox = ({ data, onFilter, searchFunction, placeholder = "Search posts...", showCount = true }) => {
+const SearchBox = ({ data, onFilter, searchFunction, placeholder = 'Search posts...', showCount = true }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [filteredData, setFilteredData] = useState(data);
 
@@ -75,7 +75,7 @@ const SearchBox = ({ data, onFilter, searchFunction, placeholder = "Search posts
     onFilter(filtered);
   }, [searchTerm, data, onFilter, searchFunction]);
 
-  const handleSearchChange = (e) => {
+  const handleSearchChange = e => {
     setSearchTerm(e.target.value);
   };
 

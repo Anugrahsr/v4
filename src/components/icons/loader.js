@@ -5,9 +5,9 @@ const IconLoader = () => (
     <title>Loader Logo</title>
     <g>
       <g id="B" transform="translate(11.000000, 5.000000)">
-      <text x="26" y="57" fill="currentColor" fontSize="50px" fontFamily="Consolas, serif">
+        <text x="26" y="57" fill="currentColor" fontSize="50px" fontFamily="Consolas, serif">
         A
-      </text>
+        </text>
       </g>
       <path
         stroke="currentColor"
