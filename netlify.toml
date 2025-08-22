@@ -3,6 +3,6 @@
   publish = "public"
 
 [build.environment]
-  NODE_VERSION = "18.19.0"
+  NODE_VERSION = "18.20.8"
   NPM_FLAGS = "--legacy-peer-deps"
   YARN_ENABLED = "false"
