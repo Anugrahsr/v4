@@ -206,7 +206,7 @@ const TalksPage = ({ location, data }) => {
   const [filteredTalks, setFilteredTalks] = useState(allTalks);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = useCallback((term) => {
+  const handleSearch = useCallback(term => {
     setSearchTerm(term);
     if (!term.trim()) {
       setFilteredTalks(allTalks);
@@ -216,7 +216,7 @@ const TalksPage = ({ location, data }) => {
     }
   }, [allTalks]);
 
-  const handleFilter = useCallback((filtered) => {
+  const handleFilter = useCallback(filtered => {
     setFilteredTalks(filtered);
   }, []);
 

@@ -162,18 +162,18 @@ const Stats = () => {
   `);
 
   // Parse stats from markdown content
-  const parseStatsFromHtml = (html) => {
+  const parseStatsFromHtml = html => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     const headings = doc.querySelectorAll('h2');
     const stats = [];
     
-    headings.forEach((heading) => {
+    headings.forEach(heading => {
       const nextElement = heading.nextElementSibling;
       if (nextElement && nextElement.textContent.trim()) {
         stats.push({
           number: nextElement.textContent.trim(),
-          description: heading.textContent.trim()
+          description: heading.textContent.trim(),
         });
       }
     });
@@ -182,18 +182,18 @@ const Stats = () => {
   };
 
   // Parse services from markdown content
-  const parseServicesFromHtml = (html) => {
+  const parseServicesFromHtml = html => {
     const parser = new DOMParser();
     const doc = parser.parseFromString(html, 'text/html');
     const headings = doc.querySelectorAll('h2');
     const services = [];
     
-    headings.forEach((heading) => {
+    headings.forEach(heading => {
       const nextElement = heading.nextElementSibling;
       if (nextElement && nextElement.textContent.trim()) {
         services.push({
           title: heading.textContent.trim(),
-          description: nextElement.textContent.trim()
+          description: nextElement.textContent.trim(),
         });
       }
     });

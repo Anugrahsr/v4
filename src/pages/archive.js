@@ -136,7 +136,7 @@ const ArchivePage = ({ location, data }) => {
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
 
-  const handleFilter = useCallback((filtered) => {
+  const handleFilter = useCallback(filtered => {
     setFilteredProjects(filtered);
   }, []);
 
@@ -231,7 +231,7 @@ const ArchivePage = ({ location, data }) => {
                     textAlign: 'center',
                     color: 'var(--slate)',
                     fontSize: 'var(--fz-lg)',
-                    padding: '50px 0'
+                    padding: '50px 0',
                   }}>
                     No projects found matching your search.
                   </td>

@@ -123,7 +123,7 @@ const blogPage = ({ location, data }) => {
   const [filteredPosts, setFilteredPosts] = useState(allPosts);
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = useCallback((term) => {
+  const handleSearch = useCallback(term => {
     setSearchTerm(term);
     if (!term.trim()) {
       setFilteredPosts(allPosts);
@@ -133,7 +133,7 @@ const blogPage = ({ location, data }) => {
     }
   }, [allPosts]);
 
-  const handleFilter = useCallback((filtered) => {
+  const handleFilter = useCallback(filtered => {
     setFilteredPosts(filtered);
   }, []);
 
@@ -205,7 +205,7 @@ const blogPage = ({ location, data }) => {
                 color: 'var(--slate)', 
                 fontSize: 'var(--fz-lg)',
                 gridColumn: '1 / -1',
-                padding: '50px 0'
+                padding: '50px 0',
               }}>
                 No blog posts found matching your search.
               </div>

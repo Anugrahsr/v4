@@ -132,7 +132,7 @@ const About = () => {
     sr.reveal(revealContainer.current, srConfig());
   }, []);
 
-  const skills = ['Web/API Penetration Testing','Mobile Application Security Testing', 'LLM Security & AI Hacking', 'Network Security Assessment', 'Bug Bounty Hunting & Vulnerability Research', 'Cybersecurity content creation & Mentorship'];
+  const skills = ['Web/API Penetration Testing', 'Mobile Application Security Testing', 'LLM Security & AI Hacking', 'Network Security Assessment', 'Bug Bounty Hunting & Vulnerability Research', 'Cybersecurity content creation & Mentorship'];
 
   return (
     <StyledAboutSection id="about" ref={revealContainer}>

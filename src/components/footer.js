@@ -66,13 +66,11 @@ const StyledCredit = styled.div`
   }
 `;
 
-const Footer = () => {
-
-  return (
-    <StyledFooter>
-      <StyledSocialLinks>
-        <ul>
-          {socialMedia &&
+const Footer = () => (
+  <StyledFooter>
+    <StyledSocialLinks>
+      <ul>
+        {socialMedia &&
             socialMedia.map(({ name, url }, i) => (
               <li key={i}>
                 <a href={url} aria-label={name}>
@@ -80,20 +78,19 @@ const Footer = () => {
                 </a>
               </li>
             ))}
-        </ul>
-      </StyledSocialLinks>
+      </ul>
+    </StyledSocialLinks>
 
-      <StyledCredit tabindex="-1">
-        <div>
+    <StyledCredit tabindex="-1">
+      <div>
           Originally designed by{' '}
-          <a href="https://brittanychiang.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://brittanychiang.com" target="_blank" rel="noopener noreferrer">
             Brittany Chiang
-          </a>
+        </a>
           , rebuilt and enhanced by Anugrah SR
-        </div>
-      </StyledCredit>
-    </StyledFooter>
-  );
-};
+      </div>
+    </StyledCredit>
+  </StyledFooter>
+);
 
 export default Footer;

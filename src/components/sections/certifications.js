@@ -99,20 +99,20 @@ const StyledCertificationsSection = styled.section`
 const Certifications = () => {
   // Use directly imported certification logos
   const certifications = [
-       { id: 'ewptxv2', name: 'eLearnSecurity Web Application Penetration Tester eXtreme v2 (eWPTXv2)', publicURL: eWPTXLogo, link: 'https://elearnsecurity.com/product/ewptxv2-certification/' },
-       { id: 'ejpt', name: 'eLearnSecurity Junior Penetration Tester (eJPT)', publicURL: eJPTLogo, link: 'https://elearnsecurity.com/product/ejpt-certification/' },
-       { id: 'azure-pentest', name: 'Altered Security Introduction to Azure Penetration Testing', publicURL: CertStampAWSLogo, link: 'https://www.alteredsecurity.com/azureadlab' },
-       { id: 'ccpenx-aws', name: 'Certified Cloud Pentesting eXpert - AWS (CCPenX-AWS)', publicURL: CCPenXAWSLogo, link: 'https://elearnsecurity.com/product/ccpenx-aws-certification/' },
-       { id: 'ecpptv2', name: 'eLearnSecurity Certified Professional Penetration Tester (eCPPTv2)', publicURL: eCPPTv2Logo, link: 'https://elearnsecurity.com/product/ecpptv2-certification/' },
-       { id: 'cmpen-android', name: 'Certified Mobile Pentester (CMPen) – Android', publicURL: CertStampCMPenLogo, link: 'https://elearnsecurity.com/' },
-       { id: 'cnpen', name: 'Certified Network Pentester (CNPen)', publicURL: CertifiedNetworkPentesterLogo, link: 'https://elearnsecurity.com/' },
-       { id: 'capen', name: 'Certified AppSec Pentester (CAPen)', publicURL: CertifiedAppSecPentesterLogo, link: 'https://elearnsecurity.com/' },
-       { id: 'c-aimlpen', name: 'Certified AI/ML Pentester (C-AI/MLPen)', publicURL: CertStampAIMLLogo, link: 'https://elearnsecurity.com/' },
-       { id: 'api-pentest', name: 'API Penetration Testing', publicURL: APIPenTestLogo, link: '#' },
-       { id: 'cnsp', name: 'Certified Network Security Practitioner', publicURL: CNSPLogo, link: '#' },
-       { id: 'cert-stamp-2', name: 'Professional Certification', publicURL: CertStamp2Logo, link: '#' },
-       { id: 'redteam-llm', name: 'Red Teaming LLM Applications - AI Security Assessment', publicURL: RedTeamingLLMLogo, link: '#' }
-      ];
+    { id: 'ewptxv2', name: 'eLearnSecurity Web Application Penetration Tester eXtreme v2 (eWPTXv2)', publicURL: eWPTXLogo, link: 'https://elearnsecurity.com/product/ewptxv2-certification/' },
+    { id: 'ejpt', name: 'eLearnSecurity Junior Penetration Tester (eJPT)', publicURL: eJPTLogo, link: 'https://elearnsecurity.com/product/ejpt-certification/' },
+    { id: 'azure-pentest', name: 'Altered Security Introduction to Azure Penetration Testing', publicURL: CertStampAWSLogo, link: 'https://www.alteredsecurity.com/azureadlab' },
+    { id: 'ccpenx-aws', name: 'Certified Cloud Pentesting eXpert - AWS (CCPenX-AWS)', publicURL: CCPenXAWSLogo, link: 'https://elearnsecurity.com/product/ccpenx-aws-certification/' },
+    { id: 'ecpptv2', name: 'eLearnSecurity Certified Professional Penetration Tester (eCPPTv2)', publicURL: eCPPTv2Logo, link: 'https://elearnsecurity.com/product/ecpptv2-certification/' },
+    { id: 'cmpen-android', name: 'Certified Mobile Pentester (CMPen) – Android', publicURL: CertStampCMPenLogo, link: 'https://elearnsecurity.com/' },
+    { id: 'cnpen', name: 'Certified Network Pentester (CNPen)', publicURL: CertifiedNetworkPentesterLogo, link: 'https://elearnsecurity.com/' },
+    { id: 'capen', name: 'Certified AppSec Pentester (CAPen)', publicURL: CertifiedAppSecPentesterLogo, link: 'https://elearnsecurity.com/' },
+    { id: 'c-aimlpen', name: 'Certified AI/ML Pentester (C-AI/MLPen)', publicURL: CertStampAIMLLogo, link: 'https://elearnsecurity.com/' },
+    { id: 'api-pentest', name: 'API Penetration Testing', publicURL: APIPenTestLogo, link: '#' },
+    { id: 'cnsp', name: 'Certified Network Security Practitioner', publicURL: CNSPLogo, link: '#' },
+    { id: 'cert-stamp-2', name: 'Professional Certification', publicURL: CertStamp2Logo, link: '#' },
+    { id: 'redteam-llm', name: 'Red Teaming LLM Applications - AI Security Assessment', publicURL: RedTeamingLLMLogo, link: '#' },
+  ];
 
   if (!certifications.length) {
     return (
@@ -127,7 +127,7 @@ const Certifications = () => {
 
   const marqueeCertifications = [...certifications, ...certifications, ...certifications, ...certifications];
 
-  const handleCertClick = (link) => {
+  const handleCertClick = link => {
     if (link) {
       window.open(link, '_blank', 'noopener,noreferrer');
     }

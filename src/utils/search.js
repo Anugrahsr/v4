@@ -7,8 +7,8 @@
  * @param {string} text - Text to normalize
  * @returns {string} - Normalized text
  */
-const normalizeText = (text) => {
-  if (!text) return '';
+const normalizeText = text => {
+  if (!text) {return '';}
   return text.toLowerCase().trim();
 };
 
@@ -19,7 +19,7 @@ const normalizeText = (text) => {
  * @returns {Array} - Filtered talks
  */
 export const searchTalks = (talks, searchTerm) => {
-  if (!searchTerm || !talks) return talks;
+  if (!searchTerm || !talks) {return talks;}
   
   const normalizedSearch = normalizeText(searchTerm);
   
@@ -27,19 +27,19 @@ export const searchTalks = (talks, searchTerm) => {
     const { frontmatter, html } = node;
     
     // Search in title
-    if (normalizeText(frontmatter?.title).includes(normalizedSearch)) return true;
+    if (normalizeText(frontmatter?.title).includes(normalizedSearch)) {return true;}
     
     // Search in description
-    if (normalizeText(frontmatter?.description).includes(normalizedSearch)) return true;
+    if (normalizeText(frontmatter?.description).includes(normalizedSearch)) {return true;}
     
     // Search in venue
-    if (normalizeText(frontmatter?.venue).includes(normalizedSearch)) return true;
+    if (normalizeText(frontmatter?.venue).includes(normalizedSearch)) {return true;}
     
     // Search in tags
-    if (arrayContains(frontmatter?.tags, normalizedSearch)) return true;
+    if (arrayContains(frontmatter?.tags, normalizedSearch)) {return true;}
     
     // Search in content (HTML)
-    if (normalizeText(html).includes(normalizedSearch)) return true;
+    if (normalizeText(html).includes(normalizedSearch)) {return true;}
     
     return false;
   });
@@ -52,7 +52,7 @@ export const searchTalks = (talks, searchTerm) => {
  * @returns {boolean} - Whether the term was found
  */
 const arrayContains = (array, searchTerm) => {
-  if (!array || !Array.isArray(array)) return false;
+  if (!array || !Array.isArray(array)) {return false;}
   return array.some(item => normalizeText(item).includes(normalizeText(searchTerm)));
 };
 
@@ -63,7 +63,7 @@ const arrayContains = (array, searchTerm) => {
  * @returns {Array} - Filtered posts
  */
 export const searchBlogPosts = (posts, searchTerm) => {
-  if (!searchTerm || !posts) return posts;
+  if (!searchTerm || !posts) {return posts;}
   
   const normalizedSearch = normalizeText(searchTerm);
   
@@ -71,16 +71,16 @@ export const searchBlogPosts = (posts, searchTerm) => {
     const { frontmatter, html } = node;
     
     // Search in title
-    if (normalizeText(frontmatter?.title).includes(normalizedSearch)) return true;
+    if (normalizeText(frontmatter?.title).includes(normalizedSearch)) {return true;}
     
     // Search in description
-    if (normalizeText(frontmatter?.description).includes(normalizedSearch)) return true;
+    if (normalizeText(frontmatter?.description).includes(normalizedSearch)) {return true;}
     
     // Search in tags
-    if (arrayContains(frontmatter?.tags, normalizedSearch)) return true;
+    if (arrayContains(frontmatter?.tags, normalizedSearch)) {return true;}
     
     // Search in content (HTML)
-    if (normalizeText(html).includes(normalizedSearch)) return true;
+    if (normalizeText(html).includes(normalizedSearch)) {return true;}
     
     return false;
   });
@@ -93,7 +93,7 @@ export const searchBlogPosts = (posts, searchTerm) => {
  * @returns {Array} - Filtered projects
  */
 export const searchProjects = (projects, searchTerm) => {
-  if (!searchTerm || !projects) return projects;
+  if (!searchTerm || !projects) {return projects;}
   
   const normalizedSearch = normalizeText(searchTerm);
   
@@ -101,16 +101,16 @@ export const searchProjects = (projects, searchTerm) => {
     const { frontmatter, html } = node;
     
     // Search in title
-    if (normalizeText(frontmatter?.title).includes(normalizedSearch)) return true;
+    if (normalizeText(frontmatter?.title).includes(normalizedSearch)) {return true;}
     
     // Search in company
-    if (normalizeText(frontmatter?.company).includes(normalizedSearch)) return true;
+    if (normalizeText(frontmatter?.company).includes(normalizedSearch)) {return true;}
     
     // Search in tech stack
-    if (arrayContains(frontmatter?.tech, normalizedSearch)) return true;
+    if (arrayContains(frontmatter?.tech, normalizedSearch)) {return true;}
     
     // Search in content (HTML)
-    if (normalizeText(html).includes(normalizedSearch)) return true;
+    if (normalizeText(html).includes(normalizedSearch)) {return true;}
     
     return false;
   });
@@ -124,12 +124,12 @@ export const searchProjects = (projects, searchTerm) => {
  * @returns {Array} - Filtered items
  */
 export const searchContent = (items, searchTerm, options = {}) => {
-  if (!searchTerm || !items) return items;
+  if (!searchTerm || !items) {return items;}
   
   const {
     searchFields = ['title', 'description', 'tags', 'tech', 'company'],
     searchInContent = true,
-    caseSensitive = false
+    caseSensitive = false,
   } = options;
   
   const normalizedSearch = caseSensitive ? searchTerm : normalizeText(searchTerm);
@@ -145,18 +145,18 @@ export const searchContent = (items, searchTerm, options = {}) => {
       
       if (Array.isArray(fieldValue)) {
         // Handle arrays (tags, tech, etc.)
-        if (arrayContains(fieldValue, searchTerm)) return true;
+        if (arrayContains(fieldValue, searchTerm)) {return true;}
       } else if (fieldValue) {
         // Handle strings
         const normalizedField = caseSensitive ? fieldValue : normalizeText(fieldValue);
-        if (normalizedField.includes(normalizedSearch)) return true;
+        if (normalizedField.includes(normalizedSearch)) {return true;}
       }
     }
     
     // Search in content if enabled
     if (searchInContent && html) {
       const normalizedContent = caseSensitive ? html : normalizeText(html);
-      if (normalizedContent.includes(normalizedSearch)) return true;
+      if (normalizedContent.includes(normalizedSearch)) {return true;}
     }
     
     return false;
@@ -170,7 +170,7 @@ export const searchContent = (items, searchTerm, options = {}) => {
  * @returns {string} - Text with highlighted terms
  */
 export const highlightSearchTerm = (text, searchTerm) => {
-  if (!text || !searchTerm) return text;
+  if (!text || !searchTerm) {return text;}
   
   const regex = new RegExp(`(${searchTerm})`, 'gi');
   return text.replace(regex, '<mark>$1</mark>');
@@ -181,7 +181,7 @@ export const highlightSearchTerm = (text, searchTerm) => {
  * @param {Array} items - Array of items to analyze
  * @returns {Array} - Array of suggested search terms
  */
-export const getSearchSuggestions = (items) => {
+export const getSearchSuggestions = items => {
   const suggestions = new Set();
   
   items.forEach(item => {

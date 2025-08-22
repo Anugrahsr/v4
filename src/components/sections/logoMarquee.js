@@ -95,7 +95,7 @@ const LogoMarquee = () => {
     { id: 'apple', name: 'Apple', publicURL: AppleLogo },
     { id: 'bmw', name: 'BMW', publicURL: BMWLogo },
     { id: 'dod', name: 'Department of Defense', publicURL: DODLogo },
-    { id: 'redbull', name: 'Red Bull', publicURL: RedBullLogo }
+    { id: 'redbull', name: 'Red Bull', publicURL: RedBullLogo },
   ];
 
 
