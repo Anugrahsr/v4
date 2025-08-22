@@ -57,26 +57,54 @@ const StyledLogoMarqueeSection = styled.section`
   .marquee-content {
     display: flex;
     width: max-content;
-    animation: ${marqueeAnimation} 20s linear infinite;
+    animation: ${marqueeAnimation} 40s linear infinite;
+    
+    &:hover {
+      animation-play-state: paused;
+    }
   }
 
   .logo-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 40px;
+    padding: 0 30px;
+    transition: var(--transition);
+    
+    &:hover {
+      transform: translateY(-3px);
+    }
+  }
+
+  .logo-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 15px 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    min-height: 60px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    
+    &:hover {
+      background: rgba(255, 255, 255, 1);
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+    }
   }
 
   .logo-img {
-    height: 50px;
+    height: 40px;
     width: auto;
-    filter: grayscale(100%) brightness(1.8);
-    opacity: 0.7;
-    transition: var(--transition);
+    max-width: 120px;
+    filter: none;
+    opacity: 1;
+    transition: all 0.3s ease;
 
     &:hover {
-      filter: none;
-      opacity: 1;
+      transform: scale(1.1);
     }
   }
 `;
@@ -124,11 +152,13 @@ const LogoMarquee = () => {
         <div className="marquee-content">
           {marqueeLogos.map((logo, index) => (
             <div className="logo-item" key={`${logo.id}-${index}`}>
-              <img
-                className="logo-img"
-                src={logo.publicURL}
-                alt={`${logo.name} logo`}
-              />
+              <div className="logo-container">
+                <img
+                  className="logo-img"
+                  src={logo.publicURL}
+                  alt={`${logo.name} logo`}
+                />
+              </div>
             </div>
           ))}
         </div>

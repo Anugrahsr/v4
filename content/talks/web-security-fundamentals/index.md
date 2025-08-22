@@ -12,7 +12,7 @@ venue: 'CyberSec Conference 2023'
 external: 'https://www.youtube.com/watch?v=example1'
 slides: '/slides/web-security-fundamentals.pdf'
 image: './web-security-cover.jpg'
-draft: false
+draft: true
 ---
 
 A deep dive into web application security fundamentals, presented at CyberSec Conference 2023. This talk focused on practical security measures and common attack vectors.

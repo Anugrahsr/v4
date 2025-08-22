@@ -13,7 +13,7 @@ venue: 'DevSecOps Summit 2023'
 external: 'https://www.youtube.com/watch?v=example2'
 slides: '/slides/api-security-best-practices.pdf'
 image: './api-security-cover.jpg'
-draft: false
+draft: true
 ---
 
 Presented at DevSecOps Summit 2023, this talk addressed the critical importance of API security in modern application architectures.
