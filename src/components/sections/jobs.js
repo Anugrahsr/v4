@@ -218,11 +218,16 @@ const StyledTabPanel = styled.div`
     opacity: 0.8;
     transition: all 0.3s ease;
     flex-shrink: 0;
+    background: white;
+    padding: 8px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     
     @media (max-width: 600px) {
       width: 50px;
       height: 50px;
       margin-bottom: 10px;
+      padding: 6px;
     }
   }
 

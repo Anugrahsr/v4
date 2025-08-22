@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 // Import certification logos directly as modules - only PNG files that exist
 import CCPenXAWSLogo from '../../images/certifications/ccpenX-AWS.png';
 import eCPPTv2Logo from '../../images/certifications/eCPPTv2.png';
-import APIPenTestLogo from '../../images/certifications/api-pentest.png';
+import APIPenTestLogo from '../../images/certifications/api_pentest.png';
 import eWPTXLogo from '../../images/certifications/ewptx.png';
 import eJPTLogo from '../../images/certifications/ejpt-certification.svg';
 import CNSPLogo from '../../images/certifications/Certified-Network-Security-Practitioner-whbg.png';
@@ -79,19 +79,17 @@ const StyledCertificationsSection = styled.section`
   }
 
   .cert-img {
-    height: 80px;
+    height: 120px;
     width: auto;
-    filter: grayscale(100%) brightness(1.2);
-    opacity: 0.8;
+    opacity: 0.9;
     transition: var(--transition);
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
     &:hover {
-      filter: none;
       opacity: 1;
-      transform: scale(1.05);
-      box-shadow: 0 8px 25px rgba(100, 255, 218, 0.3);
+      transform: scale(1.2);
+      box-shadow: 0 12px 30px rgba(100, 255, 218, 0.4);
     }
   }
 `;

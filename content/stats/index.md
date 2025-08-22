@@ -11,5 +11,5 @@ title: "Professional Stats"
 ## Bugs Reported.
 1337+
 
-## Professional & dedicated.
-100%
+## Talks delivered.
+10+

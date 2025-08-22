@@ -32,7 +32,7 @@ const StyledText = styled.div`
       margin-bottom: 10px;
       padding-left: 20px;
       font-family: var(--font-mono);
-      font-size: var(--fz-xs);
+      font-size: var(--fz-sm);
 
       &:before {
         content: '▹';
@@ -81,8 +81,8 @@ const StyledPic = styled.div`
     .img {
       position: relative;
       border-radius: var(--border-radius);
-      mix-blend-mode: multiply;
-      filter: grayscale(100%) contrast(1);
+      mix-blend-mode: normal;
+      filter: none;
       transition: var(--transition);
     }
 
