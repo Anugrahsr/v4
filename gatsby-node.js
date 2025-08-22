@@ -10,7 +10,9 @@ const _ = require('lodash');
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
   const postTemplate = path.resolve(`src/templates/post.js`);
+  const talkTemplate = path.resolve(`src/templates/talk.js`);
   const tagTemplate = path.resolve('src/templates/tag.js');
+  const talkTagTemplate = path.resolve('src/templates/talk-tag.js');
 
   const result = await graphql(`
     {
@@ -27,7 +29,31 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           }
         }
       }
+      talksRemark: allMarkdownRemark(
+        filter: { 
+          fileAbsolutePath: { regex: "/content/talks/" },
+          frontmatter: { draft: { ne: true } }
+        }
+        sort: { order: DESC, fields: [frontmatter___date] }
+        limit: 1000
+      ) {
+        edges {
+          node {
+            frontmatter {
+              slug
+            }
+          }
+        }
+      }
       tagsGroup: allMarkdownRemark(limit: 2000) {
+        group(field: frontmatter___tags) {
+          fieldValue
+        }
+      }
+      talkTagsGroup: allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/talks/" } }
+        limit: 2000
+      ) {
         group(field: frontmatter___tags) {
           fieldValue
         }
@@ -52,13 +78,39 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     });
   });
 
+  // Create talk detail pages
+  const talks = result.data.talksRemark.edges;
+
+  talks.forEach(({ node }) => {
+    createPage({
+      path: node.frontmatter.slug,
+      component: talkTemplate,
+      context: {
+        slug: node.frontmatter.slug,
+      },
+    });
+  });
+
   // Extract tag data from query
   const tags = result.data.tagsGroup.group;
   // Make tag pages
   tags.forEach(tag => {
     createPage({
-      path: `/pensieve/tags/${_.kebabCase(tag.fieldValue)}/`,
+      path: `/blogs/tags/${_.kebabCase(tag.fieldValue)}/`,
       component: tagTemplate,
+      context: {
+        tag: tag.fieldValue,
+      },
+    });
+  });
+
+  // Extract talk tag data from query
+  const talkTags = result.data.talkTagsGroup.group;
+  // Make talk tag pages
+  talkTags.forEach(tag => {
+    createPage({
+      path: `/talks/tags/${_.kebabCase(tag.fieldValue)}/`,
+      component: talkTagTemplate,
       context: {
         tag: tag.fieldValue,
       },

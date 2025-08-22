@@ -1,37 +1,32 @@
-<div align="center">
-  <img alt="Logo" src="https://raw.githubusercontent.com/bchiang7/v4/main/src/images/logo.png" width="100" />
-</div>
 <h1 align="center">
-  brittanychiang.com - v4
+  Personal Portfolio Website
 </h1>
 <p align="center">
-  The fourth iteration of <a href="https://brittanychiang.com" target="_blank">brittanychiang.com</a> built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and hosted with <a href="https://www.netlify.com/" target="_blank">Netlify</a>
-</p>
-<p align="center">
-  Previous iterations:
-  <a href="https://github.com/bchiang7/v1" target="_blank">v1</a>,
-  <a href="https://github.com/bchiang7/v2" target="_blank">v2</a>,
-  <a href="https://github.com/bchiang7/bchiang7.github.io" target="_blank">v3</a>
-</p>
-<p align="center">
-  <a href="https://app.netlify.com/sites/brittanychiang/deploys" target="_blank">
-    <img src="https://api.netlify.com/api/v1/badges/1963b488-7b78-48c9-9e2d-6fb5e47ab3af/deploy-status" alt="Netlify Status" />
-  </a>
+  A personal portfolio website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and React
 </p>
 
-![demo](https://raw.githubusercontent.com/bchiang7/v4/main/src/images/demo.png)
+## 📝 About This Project
 
-## 🚨 Forking this repo (please read!)
+This portfolio website is built upon the excellent foundation created by [Brittany Chiang](https://brittanychiang.com). The original design and architecture have been rebuilt and enhanced with additional features including:
 
-Many people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually **yes, with attribution**.
+- Enhanced blog section with improved navigation
+- Talks and presentations showcase
+- Updated content management
+- Improved responsive design
+- Custom styling and components
 
-I value keeping my site open source, but as you all know, _**plagiarism is bad**_. It's always disheartening whenever I find that someone has copied my site without giving me credit. I spent a non-trivial amount of effort building and designing this iteration of my website, and I am proud of it! All I ask of you all is to not claim this effort as your own.
+**Original Design Credit:** This project is based on the [v4 portfolio](https://github.com/bchiang7/v4) by [Brittany Chiang](https://brittanychiang.com), used under the MIT License.
 
-Please also note that I did not build this site with the intention of it being a starter theme, so if you have questions about implementation, please refer to the [Gatsby docs](https://www.gatsbyjs.org/docs/).
+## 📄 License & Attribution
 
-### TL;DR
+This project is licensed under the MIT License. The original design and codebase were created by [Brittany Chiang](https://brittanychiang.com) and have been modified and enhanced.
 
-Yes, you can fork this repo. Please give me proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
+**Attribution Requirements:**
+- Original design by [Brittany Chiang](https://brittanychiang.com)
+- Original repository: [bchiang7/v4](https://github.com/bchiang7/v4)
+- Modified and enhanced by Anugrah SR
+
+If you use this code, please maintain proper attribution to both the original creator and any substantial modifications.
 
 ## 🛠 Installation & Set Up
 
