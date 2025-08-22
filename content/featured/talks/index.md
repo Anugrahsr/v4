@@ -1,13 +1,14 @@
 ---
 date: '4'
-title: 'TechTalks ep 2 BUG BOUNTY 101'
+title: 'Talks and Webinar'
 cover: './talk.png'
 github: ''
-external: 'https://www.youtube.com/watch?v=RRZWUgho_Do'
+external: '/talks'
 tech:
   - TechTalks
   - Webinar
+  - Speaking
 showInProjects: true
 ---
 
-I gave my first talk at TechTalks organized by Computing and Networking Council, IISER Bhopal.
+Explore my speaking engagements and conference presentations covering cybersecurity, bug bounty hunting, and web application security. From technical deep-dives to introductory workshops, discover insights shared with the community.

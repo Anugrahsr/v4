@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { graphql, Link } from 'gatsby';
 import kebabCase from 'lodash/kebabCase';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
-import { Layout } from '@components';
+import { Layout, SearchBox } from '@components';
 import { IconZap } from '@components/icons';
+import { searchBlogPosts } from '@utils/search';
 
 const StyledMainContainer = styled.main`
   & > header {
@@ -118,15 +119,31 @@ const StyledTags = styled.ul`
 `;
 
 const blogPage = ({ location, data }) => {
-  const posts = data.allMarkdownRemark.edges;
+  const allPosts = data.allMarkdownRemark.edges;
+  const [filteredPosts, setFilteredPosts] = useState(allPosts);
+  const [searchTerm, setSearchTerm] = useState('');
+
+  const handleSearch = useCallback((term) => {
+    setSearchTerm(term);
+    if (!term.trim()) {
+      setFilteredPosts(allPosts);
+    } else {
+      const filtered = searchBlogPosts(allPosts, term);
+      setFilteredPosts(filtered);
+    }
+  }, [allPosts]);
+
+  const handleFilter = useCallback((filtered) => {
+    setFilteredPosts(filtered);
+  }, []);
 
   return (
     <Layout location={location}>
-      <Helmet title="blog" />
+      <Helmet title="Blogs" />
 
       <StyledMainContainer>
         <header>
-          <h1 className="big-heading">blog</h1>
+          <h1 className="big-heading">Blogs</h1>
           <p className="subtitle">
             <a href="https://www.wizardingworld.com/writing-by-jk-rowling/blog">
               a collection of memories
@@ -134,10 +151,18 @@ const blogPage = ({ location, data }) => {
           </p>
         </header>
 
+        <SearchBox
+          data={allPosts}
+          onFilter={handleFilter}
+          searchFunction={searchBlogPosts}
+          placeholder="Search blog posts by title, description, or tags..."
+          showCount={true}
+        />
+
         <StyledGrid>
           <div className="posts">
-            {posts.length > 0 &&
-              posts.map(({ node }, i) => {
+            {filteredPosts.length > 0 ? (
+              filteredPosts.map(({ node }, i) => {
                 const { frontmatter } = node;
                 const { title, description, slug, date, tags } = frontmatter;
                 const d = new Date(date);
@@ -162,7 +187,7 @@ const blogPage = ({ location, data }) => {
                           {tags.map((tag, i) => (
                             <li key={i}>
                               <Link
-                                to={`/blog/tags/${kebabCase(tag)}/`}
+                                to={`/blogs/tags/${kebabCase(tag)}/`}
                                 className="inline-link">
                                 #{tag}
                               </Link>
@@ -173,7 +198,18 @@ const blogPage = ({ location, data }) => {
                     </StyledPostInner>
                   </StyledPost>
                 );
-              })}
+              })
+            ) : (
+              <div style={{ 
+                textAlign: 'center', 
+                color: 'var(--slate)', 
+                fontSize: 'var(--fz-lg)',
+                gridColumn: '1 / -1',
+                padding: '50px 0'
+              }}>
+                No blog posts found matching your search.
+              </div>
+            )}
           </div>
         </StyledGrid>
       </StyledMainContainer>

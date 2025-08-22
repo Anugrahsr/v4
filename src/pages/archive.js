@@ -1,12 +1,13 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { srConfig } from '@config';
 import sr from '@utils/sr';
-import { Layout } from '@components';
+import { Layout, SearchBox } from '@components';
 import { Icon } from '@components/icons';
+import { searchProjects } from '@utils/search';
 
 const StyledTableContainer = styled.div`
   margin: 100px -20px;
@@ -129,10 +130,15 @@ const StyledTableContainer = styled.div`
 `;
 
 const ArchivePage = ({ location, data }) => {
-  const projects = data.allMarkdownRemark.edges;
+  const allProjects = data.allMarkdownRemark.edges;
+  const [filteredProjects, setFilteredProjects] = useState(allProjects);
   const revealTitle = useRef(null);
   const revealTable = useRef(null);
   const revealProjects = useRef([]);
+
+  const handleFilter = useCallback((filtered) => {
+    setFilteredProjects(filtered);
+  }, []);
 
   useEffect(() => {
     sr.reveal(revealTitle.current, srConfig());
@@ -147,8 +153,16 @@ const ArchivePage = ({ location, data }) => {
       <main>
         <header ref={revealTitle}>
           <h1 className="big-heading">Archive</h1>
-          <p className="subtitle">A big list of things I’ve worked on</p>
+          <p className="subtitle">A big list of things I've worked on</p>
         </header>
+
+        <SearchBox
+          data={allProjects}
+          onFilter={handleFilter}
+          searchFunction={searchProjects}
+          placeholder="Search projects by title, company, or technology..."
+          showCount={true}
+        />
 
         <StyledTableContainer ref={revealTable}>
           <table>
@@ -162,14 +176,12 @@ const ArchivePage = ({ location, data }) => {
               </tr>
             </thead>
             <tbody>
-              {projects.length > 0 &&
-                projects.map(({ node }, i) => {
+              {filteredProjects.length > 0 ? (
+                filteredProjects.map(({ node }, i) => {
                   const {
                     date,
                     github,
                     external,
-                    ios,
-                    android,
                     title,
                     tech,
                     company,
@@ -207,21 +219,24 @@ const ArchivePage = ({ location, data }) => {
                               <Icon name="GitHub" />
                             </a>
                           )}
-                          {ios && (
-                            <a href={ios} aria-label="Apple App Store Link">
-                              <Icon name="AppStore" />
-                            </a>
-                          )}
-                          {android && (
-                            <a href={android} aria-label="Google Play Store Link">
-                              <Icon name="PlayStore" />
-                            </a>
-                          )}
+
                         </div>
                       </td>
                     </tr>
                   );
-                })}
+                })
+              ) : (
+                <tr>
+                  <td colSpan="5" style={{
+                    textAlign: 'center',
+                    color: 'var(--slate)',
+                    fontSize: 'var(--fz-lg)',
+                    padding: '50px 0'
+                  }}>
+                    No projects found matching your search.
+                  </td>
+                </tr>
+              )}
             </tbody>
           </table>
         </StyledTableContainer>
@@ -250,8 +265,6 @@ export const pageQuery = graphql`
             tech
             github
             external
-            ios
-            android
             company
           }
           html

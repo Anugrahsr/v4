@@ -9,6 +9,23 @@ const StyledHeroSection = styled.section`
   flex-direction: column;
   align-items: flex-start;
   min-height: 100vh;
+  max-width: 1000px;
+
+  .hero-inner {
+    display: block;
+    width: 100%;
+    text-align: left;
+
+    @media (max-width: 768px) {
+      text-align: center;
+    }
+  }
+
+  .hero-content {
+    @media (max-width: 768px) {
+      margin-bottom: 50px;
+    }
+  }
 
   h1 {
     margin: 0 0 30px 4px;
@@ -39,6 +56,8 @@ const StyledHeroSection = styled.section`
   }
 `;
 
+
+
 const Hero = () => {
   const [isMounted, setIsMounted] = useState(false);
 
@@ -49,10 +68,10 @@ const Hero = () => {
 
   const one = <h1>Hi, my name is</h1>;
   const two = <h2 className="big-heading">Anugrah SR.</h2>;
-  const three = <h3 className="big-heading">Your Friendly Neighborhood Hacker!</h3>;
+  const three = <h3 className="big-heading">#Hack Learn Daily!</h3>;
   const four = (
     <p>
-      I'm a Cyber Security Consultant based in Kerala, India specializing in Vulnerability assessment and penetration testing of Web applications, Mobile applications, API, and Networks.
+      I'm a passionate Cybersecurity Professional and Bug Bounty Hunter based in Kerala, India, specializing in vulnerability assessment and penetration testing of web applications, mobile applications, APIs, and networks. With expertise in LLM security and AI hacking, I help individuals and businesses stay secure in our rapidly evolving digital landscape.
     </p>
   );
   const five = (
@@ -65,14 +84,18 @@ const Hero = () => {
 
   return (
     <StyledHeroSection>
-      <TransitionGroup component={null}>
-        {isMounted &&
-          items.map((item, i) => (
-            <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
-              <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
-            </CSSTransition>
-          ))}
-      </TransitionGroup>
+      <div className="hero-inner">
+        <div className="hero-content">
+          <TransitionGroup component={null}>
+            {isMounted &&
+              items.map((item, i) => (
+                <CSSTransition key={i} classNames="fadeup" timeout={loaderDelay}>
+                  <div style={{ transitionDelay: `${i + 1}00ms` }}>{item}</div>
+                </CSSTransition>
+              ))}
+          </TransitionGroup>
+        </div>
+      </div>
     </StyledHeroSection>
   );
 };
