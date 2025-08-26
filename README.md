@@ -1,32 +1,52 @@
 <h1 align="center">
-  Personal Portfolio Website
+  Anugrah SR - Personal Portfolio
 </h1>
 <p align="center">
-  A personal portfolio website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and React
+  A cybersecurity professional's portfolio website built with <a href="https://www.gatsbyjs.org/" target="_blank">Gatsby</a> and React
+</p>
+<p align="center">
+  🌐 <a href="https://anugrahsr.in" target="_blank">anugrahsr.in</a>
 </p>
 
 ## 📝 About This Project
 
-This portfolio website is built upon the excellent foundation created by [Brittany Chiang](https://brittanychiang.com). The original design and architecture have been rebuilt and enhanced with additional features including:
+This is the personal portfolio website of **Anugrah SR**, a cybersecurity professional and researcher. The website showcases my work, blog posts, talks, and professional journey in the field of information security.
 
-- Enhanced blog section with improved navigation
-- Talks and presentations showcase
-- Updated content management
-- Improved responsive design
-- Custom styling and components
+**Website:** [anugrahsr.in](https://anugrahsr.in)
 
-**Original Design Credit:** This project is based on the [v4 portfolio](https://github.com/bchiang7/v4) by [Brittany Chiang](https://brittanychiang.com), used under the MIT License.
+### Features
+- Professional portfolio with project showcases
+- Technical blog with cybersecurity insights
+- Talks and presentations section
+- Job experience timeline
+- Responsive design optimized for all devices
+- Fast loading with Gatsby's static site generation
 
-## 📄 License & Attribution
+### Built With
+- **Gatsby** - Static site generator
+- **React** - Frontend framework
+- **GraphQL** - Data layer
+- **Styled Components** - CSS-in-JS styling
+- **Netlify** - Hosting and deployment
 
-This project is licensed under the MIT License. The original design and codebase were created by [Brittany Chiang](https://brittanychiang.com) and have been modified and enhanced.
+## 🙏 Credits & Attribution
 
-**Attribution Requirements:**
-- Original design by [Brittany Chiang](https://brittanychiang.com)
-- Original repository: [bchiang7/v4](https://github.com/bchiang7/v4)
-- Modified and enhanced by Anugrah SR
+This portfolio is built upon the excellent foundation created by [Brittany Chiang](https://brittanychiang.com). Her original v4 portfolio design provided the perfect starting point, which I've customized and enhanced for my specific needs in the cybersecurity field.
 
-If you use this code, please maintain proper attribution to both the original creator and any substantial modifications.
+**Original Design:** [Brittany Chiang's v4 Portfolio](https://github.com/bchiang7/v4)  
+**Enhanced & Customized by:** [Anugrah SR](https://anugrahsr.in)
+
+### Key Enhancements Made:
+- Cybersecurity-focused content structure
+- Enhanced blog section with technical articles
+- Professional talks and presentations showcase
+- Custom styling and color schemes
+- Additional components for security-related content
+- Improved content management system
+
+## 📄 License
+
+This project is licensed under the MIT License. Please maintain proper attribution to both the original creator (Brittany Chiang) and any substantial modifications when using this code.
 
 ## 🛠 Installation & Set Up
 
