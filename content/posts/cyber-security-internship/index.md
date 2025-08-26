@@ -28,9 +28,6 @@ Before we begin, it is critical to understand the various types of internships a
 
 [**Internship for credits**](): Colleges and universities will often allow students the opportunity to earn college credits upon completing an internship. Schools will have varying requirements for internships in order to gain credits.
 
-**Internship for credits**
-
-Colleges and universities will often allow students the opportunity to earn college credits upon completing an internship. Schools will have varying requirements for internships in order to gain credits.
 There will be paid training courses that are branded as internships, and a strong suggestion would be to stay away from these or be cautious.
 
 ## Skills
