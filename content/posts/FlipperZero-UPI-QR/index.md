@@ -19,7 +19,7 @@ But then, the inevitable question hit me: **"How do people actually make apps fo
 
 After some digging, I discovered that `.fap` files are essentially the `.apk` files of the Flipper Zero world. Mind blown! 🤯 Suddenly, the floodgates of possibilities opened up. I started brainstorming app ideas, frantically scribbling down concepts that could showcase the Flipper's capabilities.
 
-But here's the thing - **everything I thought of already existed**. Sub-GHz analyzers? ✅ RFID cloners? ✅ WiFi tools? ✅ It felt like I was late to the party!
+But here's the thing - **everything I thought of already existed**. It felt like I was late to the party!
 
 ### The "Buy Me a Coffee" Inspiration
 
