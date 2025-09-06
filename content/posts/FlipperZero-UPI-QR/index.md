@@ -120,10 +120,7 @@ Navigate to `Apps` → `Tools` → `UPI QR Generator` on your Flipper Zero.
 - **Payee Name**: Enter the display name for transactions
 
 ### Step 3: Generate & Display
-The app instantly creates a QR code following standard UPI format:
-```
-upi://pay?pa=<UPI_ID>&pn=<PAYEE_NAME>
-```
+The app instantly creates a QR code
 
 ### Step 4: Save or Share
 - Press `OK` for fullscreen view
